@@ -73,7 +73,7 @@ namespace ReadTextFile
             } 
             return storeArgumentsCommand;
         }
-        public StoreCounts ProcessTextFile(string filePath)    //store the result in tuple so that we can access later
+        public StoreCounts ProcessTextFile(string filePath)    // store the result in a StoreCounts struct so that we can access later
         {
             StoreCounts storeCounts;
             FileReader file = new FileReader();
