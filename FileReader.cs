@@ -17,8 +17,7 @@ namespace ReadTextFile
         }
         public int ReadWords(string text)   // function for reading each word in text file
         {
-            
-            string[] wordsInTextFile = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] wordsInTextFile = text.Split(new char[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
             List<string> countWords = (from word in wordsInTextFile select word).ToList();
             return countWords.Count();
         }

@@ -5,4 +5,15 @@
 			b. Number of words 
 			c. Number of Chars (except comma, fullstop and any other symbols)
 3. Applications should console app and it should run via command line.
-       EX: C:\temp>Application.exe --input "Some.txt" 
+       EX: C:\temp>Application.exe --input "Some.txt"
+
+## Running Tests
+
+1. Build the solution using MSBuild:
+   ```
+   msbuild ReadTextFile.sln
+   ```
+2. Execute the tests with the Visual Studio test runner:
+   ```
+   vstest.console.exe ReadTextFile.Tests\bin\Debug\ReadTextFile.Tests.dll
+   ```
