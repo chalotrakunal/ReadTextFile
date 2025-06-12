@@ -22,7 +22,7 @@ namespace ReadTextFile
             List<string> countWords = (from word in wordsInTextFile select word).ToList();
             return countWords.Count();
         }
-        public int ReadChars(string text)    // for rading each character in the file
+        public int ReadChars(string text)    // for reading each character in the file
         {
             string[] charsInTextFile = text.Split(new char[] { '.', '?', '!', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);
             List<char> countChars = (from word in charsInTextFile
