@@ -18,13 +18,16 @@ namespace ReadTextFile
         public int ReadWords(string text)   // function for reading each word in text file
         {
             
-            string[] wordsInTextFile = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            // Split on any whitespace character to correctly handle new lines and tabs
+            // Using an empty separator array defaults to all whitespace characters
+            string[] wordsInTextFile = text.Split(new char[0], StringSplitOptions.RemoveEmptyEntries);
             List<string> countWords = (from word in wordsInTextFile select word).ToList();
             return countWords.Count();
         }
         public int ReadChars(string text)    // for rading each character in the file
         {
-            string[] charsInTextFile = text.Split(new char[] { '.', '?', '!', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            // Exclude common punctuation and whitespace characters from the count
+            string[] charsInTextFile = text.Split(new char[] { '.', '?', '!', ';', ':', ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             List<char> countChars = (from word in charsInTextFile
                             select word into words
                             from chars in words
